@@ -44,20 +44,20 @@ class adf4351(attribute, context_manager):
     def powerdown_altvolt0(self, value):
         self._set_iio_attr("altvoltage0", "powerdown", True, 1 - int(value), self._ctrl)
 
-    # @property
-    # def frequency_altvolt1(self):
-    #     return self._get_iio_attr("altvoltage1", "frequency", True, self._ctrl)
+    @property
+    def frequency_altvolt1(self):
+        return self._get_iio_attr("altvoltage1", "frequency", True, self._ctrl)
 
-    # @frequency_altvolt1.setter
-    # def frequency_altvolt1(self, value):
-    #     self._set_iio_attr("altvoltage1", "frequency", True, value, self._ctrl)
+    @frequency_altvolt1.setter
+    def frequency_altvolt1(self, value):
+        self._set_iio_attr("altvoltage1", "frequency", True, value, self._ctrl)
 
-    # @property
-    # def powerdown_altvolt1(self):
-    #     return bool(
-    #         1 - int(self._get_iio_attr("altvoltage1", "powerdown", True, self._ctrl))
-    #     )
+    @property
+    def powerdown_altvolt1(self):
+        return bool(
+            1 - int(self._get_iio_attr("altvoltage1", "powerdown", True, self._ctrl))
+        )
 
-    # @powerdown_altvolt1.setter
-    # def powerdown_altvolt1(self, value):
-    #     self._set_iio_attr("altvoltage1", "powerdown", True, 1 - int(value), self._ctrl)
+    @powerdown_altvolt1.setter
+    def powerdown_altvolt1(self, value):
+        self._set_iio_attr("altvoltage1", "powerdown", True, 1 - int(value), self._ctrl)
