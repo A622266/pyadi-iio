@@ -14,7 +14,7 @@ class adf4351(attribute, context_manager):
             URI of IIO context with ADF4351
     """
 
-    _device_name = "adf4351"
+    _device_name = "adf4351-rx-lpc"
 
     def __init__(self, uri=""):
         context_manager.__init__(self, uri, self._device_name)
